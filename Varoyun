@@ -1,0 +1,961 @@
+namespace Vaoyun
+{
+    public partial class Form1 : Form
+    {
+        int s,s1=0,kutus,mykutu=0,teklif=0,kutusy=19;
+        static int[] kasa = new int[20], kutu = new int[20], kutu2 = new int[20];
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            Random k = new Random();
+            int[] kasa = {10,15,20,100,250,500,1000,5000,10000,25000,50000,75000,100000,125000,250000,500000,600000,750000,800000,1000000};
+            int[] kutu2 = { 10, 15, 20, 100, 250, 500, 1000, 5000, 10000, 25000, 50000, 75000, 100000, 125000, 250000, 500000, 600000, 750000, 800000, 1000000 };
+            
+            for (int i = 0; i < 20; i++)
+            {
+                s = k.Next(0,20);
+                if (kasa[s]!=0)
+                {
+                    kutu[i] = kasa[s];
+                    kasa[s] = 0;
+                    s1 = 0;
+                }
+                else if (kasa[s]==0)
+                {
+                    if(s1==0)
+                    {
+                        i--;
+                        s++;
+                    }
+                }
+            }
+            pictureBox1.BackgroundImage = Properties.Resources.Arka;
+            pictureBox2.BackgroundImage = Properties.Resources.Baslık;
+        }
+ 
+        private void button14_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[13];
+                kutus++;
+                button14.Enabled = false;
+                button14.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[13]);
+                kutu[13] = 0;
+                kutusy--;
+                kutus++;
+                button14.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy+1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif+" Tl Kazandın","Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button19_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[18];
+                kutus++;
+                button19.Enabled = false;
+                button19.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[18]);
+                kutu[18] = 0;
+                kutusy--;
+                kutus++;
+                button19.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[17];
+                kutus++;
+                button18.Enabled = false;
+                button18.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[17]);
+                kutu[17] = 0;
+                kutusy--;
+                kutus++;
+                button18.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[16];
+                kutus++;
+                button17.Enabled = false; ;
+                button17.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[16]);
+                kutu[16] = 0;
+                kutusy--;
+                kutus++;
+                button17.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[15];
+                kutus++;
+                button16.Enabled = false;
+                button16.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[15]);
+                kutu[15] = 0;
+                kutusy--;
+                kutus++;
+                button16.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[10];
+                kutus++;
+                button11.Enabled = false;
+                button11.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[10]);
+                kutu[10] = 0;
+                kutusy--;
+                kutus++;
+                button11.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[11];
+                kutus++;
+                button12.Enabled = false;
+                button12.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[11]);
+                kutu[11] = 0;
+                kutusy--;
+                kutus++;
+                button12.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[12];
+                kutus++;
+                button13.Enabled = false;
+                button13.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[12]);
+                kutu[12] = 0;
+                kutusy--;
+                kutus++;
+                button13.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[19];
+                kutus++;
+                button20.Dispose();
+                button20.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[19]);
+                kutu[19] = 0;
+                kutusy--;
+                kutus++;
+                button20.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[14];
+                kutus++;
+                button15.Enabled = false;
+                button15.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[14]);
+                kutu[14] = 0;
+                kutusy--;
+                kutus++;
+                button15.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[5];
+                kutus++;
+                button6.Enabled = false;
+                button6.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[5]);
+                kutu[5] = 0;
+                kutusy--;
+                kutus++;
+                button6.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[6];
+                kutus++;
+                button7.Enabled = false;
+                button7.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[6]);
+                kutu[6] = 0;
+                kutusy--;
+                kutus++;
+                button7.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[7];
+                kutus++;
+                button8.Enabled = false;
+                button8.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[7]);
+                kutu[7] = 0;
+                kutusy--;
+                kutus++;
+                button8.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[8];
+                kutus++;
+                button9.Enabled = false;
+                button9.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[8]);
+                kutu[8] = 0;
+                kutusy--;
+                kutus++;
+                button9.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void panel23_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[9];
+                kutus++;
+                button10.Enabled = false;
+                button10.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[9]);
+                kutu[9] = 0;
+                kutusy--;
+                kutus++;
+                button10.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[4];
+                kutus++;
+                button5.Enabled = false;
+                button5.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[4]);
+                kutu[4] = 0;
+                kutusy--;
+                kutus++;
+                button5.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[3];
+                kutus++;
+                button4.Enabled = false;
+                button4.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[3]);
+                kutu[3] = 0;
+                kutusy--;
+                kutus++;
+                button4.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[2];
+                kutus++;
+                button3.Enabled = false;
+                button3.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[2]);
+                kutu[2] = 0;
+                kutusy--;
+                kutus++;
+                button3.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[1];
+                kutus++;
+                button2.Enabled = false;
+                button2.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[1]);
+                kutu[1] = 0;
+                kutusy--;
+                kutus++;
+                button2.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (kutus == 0)
+            {
+                mykutu = kutu[0];
+                kutus++;
+                button1.Enabled = false;
+                button1.BackColor = Color.White;
+            }
+            else if (kutus > 0)
+            {
+                MessageBox.Show("" + kutu[0]);
+                kutu[0] = 0;
+                kutusy--;
+                kutus++;
+                button1.Dispose();
+            }
+            if ((kutus-1) % 3 == 0 && kutusy < 19)
+            {
+                for (int i = 0; i < 20; i++)
+                {
+                    teklif += kutu[i];
+                }
+                teklif /= (kutusy + 1);
+                DialogResult dialogResult = MessageBox.Show("Mr.Hamdi'nin teklifi " + teklif + " TL", " Teklif", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show(teklif + " Tl Kazandın", "Oyun Bitti");
+                    Close();
+                    new Form2().Show();
+                }
+                else if (dialogResult == DialogResult.No)
+                {
+                    teklif = 0;
+                }
+            }
+            if (kutus > 18)
+            {
+                MessageBox.Show("Kutunda " + mykutu + " Tl Vardı.","Oyun Bitti");
+                Close();
+                new Form2().Show();
+            }
+        }
+    }
+}
+
+
+
+
+namespace Vaoyun
+{
+    public partial class Form2 : Form
+    {
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+            pictureBox1.BackgroundImage = Properties.Resources.Baslık21;
+            pictureBox2.BackgroundImage = Properties.Resources.Arka;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            new Form1().Show();
+            this.Hide();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+    }
+}
